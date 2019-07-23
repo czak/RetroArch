@@ -84,7 +84,7 @@ STRIP   := $(PREFIX)strip
 NM      := $(PREFIX)nm
 LD      := $(CXX)
 
-INCDIRS := -I. -Ideps/libz -Ideps/7zip -Ilibretro-common/include -Ideps/stb
+INCDIRS := -I. -Ideps/libz -Ideps/7zip -Ilibretro-common/include -Ideps/stb -Ideps/libvita2d/include -Ideps -Ideps/rcheevos/include
 LIBDIRS := -L.
 
 ARCHFLAGS := -march=armv7-a -mfpu=neon -mfloat-abi=hard -DVITA
@@ -120,7 +120,7 @@ CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions
 VITA_LIBS := -lSceDisplay_stub -lSceGxm_stub -lSceNet_stub -lSceNetCtl_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lSceHid_stub -lSceTouch_stub -lSceAudio_stub \
 	-lScePower_stub -lSceRtc_stub -lSceCommonDialog_stub -lScePgf_stub \
-	-lSceFiber_stub -lSceMotion_stub -lSceAppMgr_stub -lpthread -lpng -lz
+	-lSceFiber_stub -lSceMotion_stub -lSceAppMgr_stub -lSceDriverUser_stub -lpthread -lpng -lz
 
 LIBS	:= $(WHOLE_START) -lretro_vita $(WHOLE_END) $(VITA_LIBS) -lm -lc
 
